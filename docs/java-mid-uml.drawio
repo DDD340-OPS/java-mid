@@ -1,0 +1,89 @@
+<mxfile host="app.diagrams.net" modified="2026-04-26T06:18:00.000Z" agent="Codex" version="26.0.11" type="device">
+  <diagram id="java-mid-core-class-diagram" name="Class Diagram">
+    <mxGraphModel dx="1440" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="java-mid Core Class Diagram" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="20" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Only the 8 most important classes are shown for a clean project overview." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="30" y="52" width="520" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pkg-app" value="app / ui" style="swimlane;html=1;startSize=28;rounded=1;strokeColor=#6c8ebf;fillColor=#dae8fc;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="100" width="290" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="app" value="&lt;b&gt;LedgerApp&lt;/b&gt;&lt;br/&gt;------------------&lt;br/&gt;+ main(args): void" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;strokeColor=#6c8ebf;fillColor=#ffffff;fontSize=12;" vertex="1" parent="pkg-app">
+          <mxGeometry x="65" y="70" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" value="&lt;b&gt;LedgerConsoleUI&lt;/b&gt;&lt;br/&gt;------------------&lt;br/&gt;- ledger: Ledger&lt;br/&gt;------------------&lt;br/&gt;+ run()&lt;br/&gt;+ createLedger()&lt;br/&gt;+ add / view / update / delete&lt;br/&gt;+ report / monthly / filter&lt;br/&gt;+ loadDemoData()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;strokeColor=#6c8ebf;fillColor=#ffffff;fontSize=12;" vertex="1" parent="pkg-app">
+          <mxGeometry x="25" y="220" width="240" height="210" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pkg-service" value="service" style="swimlane;html=1;startSize=28;rounded=1;strokeColor=#82b366;fillColor=#d5e8d4;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="100" width="350" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="ledger-service" value="&lt;b&gt;LedgerService&lt;/b&gt;&lt;br/&gt;------------------&lt;br/&gt;+ createLedger()&lt;br/&gt;+ addTransaction()&lt;br/&gt;+ updateTransaction()&lt;br/&gt;+ deleteTransaction()&lt;br/&gt;+ loadDemoData()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;strokeColor=#82b366;fillColor=#ffffff;fontSize=12;" vertex="1" parent="pkg-service">
+          <mxGeometry x="35" y="70" width="280" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="statistics-service" value="&lt;b&gt;StatisticsService&lt;/b&gt;&lt;br/&gt;------------------&lt;br/&gt;+ calculateSummary()&lt;br/&gt;+ calculateExpenseByCategory()&lt;br/&gt;+ calculateMonthlySummary()&lt;br/&gt;+ buildFullReport()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;strokeColor=#82b366;fillColor=#ffffff;fontSize=12;" vertex="1" parent="pkg-service">
+          <mxGeometry x="35" y="300" width="280" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="filter-service" value="&lt;b&gt;FilterService&lt;/b&gt;&lt;br/&gt;------------------&lt;br/&gt;+ filter()&lt;br/&gt;+ filterByMonth()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;strokeColor=#82b366;fillColor=#ffffff;fontSize=12;" vertex="1" parent="pkg-service">
+          <mxGeometry x="35" y="530" width="280" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pkg-entity" value="entity" style="swimlane;html=1;startSize=28;rounded=1;strokeColor=#d6b656;fillColor=#fff2cc;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="100" width="420" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="ledger" value="&lt;b&gt;Ledger&lt;/b&gt;&lt;br/&gt;------------------&lt;br/&gt;- name: String&lt;br/&gt;- transactions: List&lt;Transaction&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;strokeColor=#d6b656;fillColor=#ffffff;fontSize=12;" vertex="1" parent="pkg-entity">
+          <mxGeometry x="25" y="70" width="170" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="transaction" value="&lt;b&gt;Transaction&lt;/b&gt;&lt;br/&gt;------------------&lt;br/&gt;- id: String&lt;br/&gt;- date: LocalDate&lt;br/&gt;- type: TransactionType&lt;br/&gt;- category: String&lt;br/&gt;- amount: double&lt;br/&gt;- note: String" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;strokeColor=#d6b656;fillColor=#ffffff;fontSize=12;" vertex="1" parent="pkg-entity">
+          <mxGeometry x="220" y="55" width="175" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="type" value="&lt;b&gt;&lt;&lt;enum&gt;&gt; TransactionType&lt;/b&gt;&lt;br/&gt;------------------&lt;br/&gt;+ INCOME&lt;br/&gt;+ EXPENSE" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=6;strokeColor=#d6b656;fillColor=#ffffff;fontSize=12;" vertex="1" parent="pkg-entity">
+          <mxGeometry x="220" y="320" width="175" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;strokeColor=#4d4d4d;" edge="1" parent="1" source="app" target="ui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;strokeColor=#4d4d4d;" edge="1" parent="1" source="ui" target="ledger-service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;strokeColor=#4d4d4d;" edge="1" parent="1" source="ui" target="statistics-service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;strokeColor=#4d4d4d;" edge="1" parent="1" source="ui" target="filter-service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;strokeColor=#4d4d4d;" edge="1" parent="1" source="ui" target="ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#4d4d4d;" edge="1" parent="1" source="ledger-service" target="ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#4d4d4d;" edge="1" parent="1" source="ledger-service" target="transaction">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#4d4d4d;" edge="1" parent="1" source="statistics-service" target="ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#4d4d4d;" edge="1" parent="1" source="filter-service" target="ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge10" value="contains" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;startArrow=diamondThin;startFill=1;endArrow=open;endFill=0;strokeColor=#4d4d4d;" edge="1" parent="1" source="ledger" target="transaction">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" value="type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;strokeColor=#4d4d4d;" edge="1" parent="1" source="transaction" target="type">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

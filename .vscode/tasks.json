@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Java Project",
+      "type": "shell",
+      "command": "C:\\Program Files\\Microsoft\\jdk-17.0.18.8-hotspot\\bin\\javac.exe",
+      "args": [
+        "-encoding",
+        "UTF-8",
+        "-d",
+        "out",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\LedgerApp.java",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\entity\\Ledger.java",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\entity\\MonthlySummary.java",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\entity\\StatisticsSummary.java",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\entity\\Transaction.java",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\entity\\TransactionType.java",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\service\\FilterService.java",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\service\\LedgerService.java",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\service\\StatisticsService.java",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\ui\\LedgerConsoleUI.java",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\util\\DateUtil.java",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\util\\IdGenerator.java",
+        "${workspaceFolder}\\src\\com\\midterm\\ledger\\util\\InputHelper.java"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$javac",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
